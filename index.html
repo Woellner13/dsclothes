@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Clothes</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="funcional.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>DS Clothes</h1>
+    <div class="carrinho-icon" onclick="toggleCarrinho()">🛒</div>
+  </header>
+
+  
+  <main>
+    <div class="produtos" id="produtos">
+      <div class="produto" onclick="abrirModal('Camisa_Corinthians.jpg','Camisa do Corinthians - R$ 250,00')">
+        <img src="Imagens/Camisa_Corinthians.jpeg" alt="Camisa">
+        <p>Camisa do Corinthians - R$ 250,00</p>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Camisa do Corinthians',250)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" onclick="abrirModal('calca.jpg','Calça Jeans - R$ 120,00')">
+        <img src="calca.jpg" alt="Calça">
+        <p>Calça Jeans - R$ 120,00</p>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Calça Jeans',120)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" onclick="abrirModal('blusa.jpg','Blusa Feminina - R$ 80,00')">
+        <img src="blusa.jpg" alt="Blusa">
+        <p>Blusa Feminina - R$ 80,00</p>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Blusa Feminina',80)">Adicionar ao Carrinho</button>
+      </div>
+      <div class="produto" onclick="abrirModal('Camisa_Corinthians.jpg','Camisa do Corinthians - R$ 250,00')">
+        <img src="Imagens/Camisa_Corinthians.jpeg" alt="Camisa">
+        <p>Camisa do Corinthians - R$ 250,00</p>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Camisa do Corinthians',250)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" onclick="abrirModal('calca.jpg','Calça Jeans - R$ 120,00')">
+        <img src="calca.jpg" alt="Calça">
+        <p>Calça Jeans - R$ 120,00</p>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Calça Jeans',120)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" onclick="abrirModal('blusa.jpg','Blusa Feminina - R$ 80,00')">
+        <img src="blusa.jpg" alt="Blusa">
+        <p>Blusa Feminina - R$ 80,00</p>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Blusa Feminina',80)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <h2>&copy; DS Clothes</h2>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="fecharModal()">&times;</span>
+    <img class="modal-content" id="imgModal">
+    <p id="descricaoModal"></p>
+  </div>
+
+  <!-- Carrinho lateral -->
+  <div id="carrinhoSidebar" class="carrinho-sidebar">
+    <h2>Carrinho</h2>
+    <ul id="itensCarrinho"></ul>
+    <button class="checkout-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="voltar" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
+    <button onclick="toggleCarrinho()">Fechar</button>
+  </div>
+
+  <!-- Tela de agradecimento -->
+  <div id="telaFinalizacao">
+    <h1>Obrigado por testar o site</h1>
+    <button id="voltarSite" onclick="voltarParaLoja()">Voltar</button>
+  </div>
+</body>
+</html>
