@@ -10,48 +10,32 @@
 </head>
 
 <body>
+  <!--Teste-->
   <header>
     <h1>DS Clothes</h1>
-    <div class="carrinho-icon" onclick="toggleCarrinho()">🛒</div>
+    <div class="carrinho-icon" onclick="toggleCarrinho()" aria-label="Abrir Carrinho">🛒</div>
   </header>
 
-  
   <main>
     <div class="produtos" id="produtos">
-      <div class="produto" onclick="abrirModal('Camisa_Corinthians.jpg','Camisa do Corinthians - R$ 250,00')">
-        <img src="Imagens/Camisa_Corinthians.jpeg" alt="Camisa">
+      <div class="produto" onclick="abrirModal('Imagens/Camisa_Corinthians.jpeg', 'Camisa do Corinthians - R$ 250,00')">
+        <img src="Imagens/Camisa_Corinthians.jpeg" alt="Camisa oficial do Corinthians em preto e branco">
         <p>Camisa do Corinthians - R$ 250,00</p>
-        <button onclick="event.stopPropagation(); adicionarCarrinho('Camisa do Corinthians',250)">Adicionar ao Carrinho</button>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Camisa do Corinthians', 250)">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="produto" onclick="abrirModal('calca.jpg','Calça Jeans - R$ 120,00')">
-        <img src="calca.jpg" alt="Calça">
+      <div class="produto" onclick="abrirModal('Imagens/calca.jpg', 'Calça Jeans - R$ 120,00')">
+        <img src="Imagens/calca.jpg" alt="Calça jeans azul escura, modelo slim fit">
         <p>Calça Jeans - R$ 120,00</p>
-        <button onclick="event.stopPropagation(); adicionarCarrinho('Calça Jeans',120)">Adicionar ao Carrinho</button>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Calça Jeans', 120)">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="produto" onclick="abrirModal('blusa.jpg','Blusa Feminina - R$ 80,00')">
-        <img src="blusa.jpg" alt="Blusa">
+      <div class="produto" onclick="abrirModal('Imagens/blusa.jpg', 'Blusa Feminina - R$ 80,00')">
+        <img src="Imagens/blusa.jpg" alt="Blusa feminina branca com estampa floral">
         <p>Blusa Feminina - R$ 80,00</p>
-        <button onclick="event.stopPropagation(); adicionarCarrinho('Blusa Feminina',80)">Adicionar ao Carrinho</button>
+        <button onclick="event.stopPropagation(); adicionarCarrinho('Blusa Feminina', 80)">Adicionar ao Carrinho</button>
       </div>
-      <div class="produto" onclick="abrirModal('Camisa_Corinthians.jpg','Camisa do Corinthians - R$ 250,00')">
-        <img src="Imagens/Camisa_Corinthians.jpeg" alt="Camisa">
-        <p>Camisa do Corinthians - R$ 250,00</p>
-        <button onclick="event.stopPropagation(); adicionarCarrinho('Camisa do Corinthians',250)">Adicionar ao Carrinho</button>
-      </div>
-
-      <div class="produto" onclick="abrirModal('calca.jpg','Calça Jeans - R$ 120,00')">
-        <img src="calca.jpg" alt="Calça">
-        <p>Calça Jeans - R$ 120,00</p>
-        <button onclick="event.stopPropagation(); adicionarCarrinho('Calça Jeans',120)">Adicionar ao Carrinho</button>
-      </div>
-
-      <div class="produto" onclick="abrirModal('blusa.jpg','Blusa Feminina - R$ 80,00')">
-        <img src="blusa.jpg" alt="Blusa">
-        <p>Blusa Feminina - R$ 80,00</p>
-        <button onclick="event.stopPropagation(); adicionarCarrinho('Blusa Feminina',80)">Adicionar ao Carrinho</button>
-      </div>
+      
     </div>
   </main>
 
@@ -61,23 +45,31 @@
 
   <!-- Modal -->
   <div id="modal" class="modal">
-    <span class="close" onclick="fecharModal()">&times;</span>
-    <img class="modal-content" id="imgModal">
-    <p id="descricaoModal"></p>
+    <div class="modal-inner">
+      <button class="modal-close" onclick="event.stopPropagation(); fecharModal()">&times;</button>
+      <div class="modal-conteudo">
+        <img class="modal-content" id="imgModal" alt="Imagem ampliada do produto">
+        <div class="descricaoModal">
+          <p id="descricaoModal"></p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Carrinho lateral -->
   <div id="carrinhoSidebar" class="carrinho-sidebar">
-    <h2>Carrinho</h2>
+    <h2>Carrinho (<span id="totalItens">0</span> itens)</h2>
     <ul id="itensCarrinho"></ul>
+    <p id="totalPreco">Total: R$ 0,00</p>
     <button class="checkout-btn" onclick="finalizarCompra()">Finalizar Compra</button>
-    <button class="voltar" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
+    <button class="esvaziar-btn" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
     <button onclick="toggleCarrinho()">Fechar</button>
   </div>
 
   <!-- Tela de agradecimento -->
   <div id="telaFinalizacao">
-    <h1>Obrigado por testar o site</h1>
+    <h1>Obrigado por testar o site!</h1>
+    <p>Seu pedido foi processado. Total: R$ <span id="totalFinal">0,00</span></p>
     <button id="voltarSite" onclick="voltarParaLoja()">Voltar</button>
   </div>
 </body>
