@@ -1,8 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 20px 0; /* Adicionado para espaçamento com footer */
   text-align: center;
+  background-color: #f9f9f9; /* Fundo claro para contraste */
 }
 
 header {
@@ -19,108 +20,156 @@ header {
   right: 20px;
   font-size: 24px;
   cursor: pointer;
+  color: rgb(210, 210, 10); /* Cor consistente */
 }
 
+/* ---------- Produtos ---------- */
 .produto {
-  width: 220px;         /* largura fixa */
-  height: 320px;        /* altura fixa */
+  width: 220px;
+  height: 340px;
   border: 3px solid #CCCCCC;
   border-radius: 8px;
   padding: 10px;
-  height: 340px;
-  display: flex;        /* organizar conteúdo */
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; /* separa imagem e texto */
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Hover suave */
+  margin-bottom: 10px; /* Espaçamento extra */
+}
+
+.produto:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .produto img {
-  width: 100%;          /* ocupa toda a largura da div */
-  height: 200px;        /* altura fixa */
-  object-fit: cover;    /* corta/ajusta sem distorcer */
-  display: block;
-}
-
-.produto .img-wrap {
   width: 100%;
   height: 200px;
-  overflow: hidden;
+  object-fit: cover;
   border-radius: 6px;
-  background: #fafafa; /* cor de fundo para quando imagem faltar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
 }
 
 .produto p {
   margin: 10px 0 0;
   text-align: center;
+  font-weight: bold;
 }
 
 .produto button {
   margin-top: 8px;
-  padding: 8px;
+  padding: 8px 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  background: rgba(0,0,0);
+  background: #000;
   cursor: pointer;
   color: rgb(210, 210, 10);
+  width: 100%;
+}
+
+.produto button:hover {
+  background: rgb(210, 210, 10);
+  color: #000;
 }
 
 .produtos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  max-width: 1200px;   /* largura máxima do bloco (ajuste conforme quiser) */
-  margin: 0 auto;      /* centraliza o bloco .produtos na página */
-  padding: 20px;       /* respiração interna */
-  align-items: start;  /* alinha os cards pelo topo */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: start;
 }
 
+/* ---------- Footer ---------- */
 footer {
   background: #000000;
   color: rgb(210, 210, 10);
   padding: 30px;
-  margin-top: 20px;
+  margin-top: auto; /* Para push footer down se necessário */
 }
 
-/* Modal */
+/* ---------- Modal ---------- */
 .modal {
   display: none;
   position: fixed;
-  z-index: 2000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.ativo {
+  display: flex;
+}
+
+.modal-inner {
+  background: #fff;
+  display: flex;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 70vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-conteudo {
+  display: flex;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  color: white;
-  text-align: center;
+  gap: 20px;
+  align-items: center;
 }
 
-.modal-content {
-  max-width: 80%;
-  max-height: 60%;
+.modal-inner img {
+  max-width: 50%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
-.close {
+#descricaoModal { /* Mudado para ID específico */
+  flex: 1;
+  background: white;
+  padding: 10px;
+  color: black;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0; /* Limpeza */
+}
+
+.modal-close {
   position: absolute;
-  top: 20px;
-  right: 45px;
-  color: white;
-  font-size: 40px;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  color: black;
+  border: none;
+  font-size: 32px;
   cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Carrinho lateral */
+.modal-close:hover {
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+}
+
+/* ---------- Carrinho ---------- */
 .carrinho-sidebar {
   position: fixed;
   top: 0;
-  right: -300px; /* escondido */
+  right: -300px;
   width: 300px;
   height: 100%;
   background: #f9f9f9;
@@ -128,13 +177,36 @@ footer {
   padding: 20px;
   transition: right 0.3s ease;
   z-index: 1000;
+  overflow-y: auto; /* Scroll se muitos itens */
 }
 
 .carrinho-sidebar.ativo {
   right: 0;
 }
 
-.checkout-btn, .voltar {
+#itensCarrinho {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#itensCarrinho li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#totalPreco {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #007a1c;
+}
+
+.checkout-btn,
+.esvaziar-btn,
+.carrinho-sidebar button { /* Botão fechar */
   display: block;
   width: 100%;
   padding: 10px;
@@ -142,29 +214,30 @@ footer {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
 }
 
 .checkout-btn {
   background: #007a1c;
-  color: white;
 }
 
-.voltar {
+.esvaziar-btn {
   background: red;
-  color: white;
 }
 
+.carrinho-sidebar button:last-child { /* Fechar */
+  background: #667;
+}
+
+/* ---------- Tela de finalização ---------- */
 #telaFinalizacao {
   display: none;
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: black;
   color: white;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 300px;
   z-index: 2000;
 }
 
@@ -175,4 +248,23 @@ footer {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Responsivo extra para mobile */
+@media (max-width: 600px) {
+  .carrinho-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .modal-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .modal-inner img {
+    max-width: 100%;
+  }
 }
