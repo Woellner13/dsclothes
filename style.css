@@ -1,9 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px 0; /* Adicionado para espaçamento com footer */
+  padding: 20px 0;
   text-align: center;
-  background-color: #f9f9f9; /* Fundo claro para contraste */
+  background-color: #f9f9f9;
 }
 
 header {
@@ -20,7 +20,26 @@ header {
   right: 20px;
   font-size: 24px;
   cursor: pointer;
-  color: rgb(210, 210, 10); /* Cor consistente */
+  color: rgb(210, 210, 10);
+}
+
+nav {
+  background-color: rgb(210, 210, 10);
+  padding: 3px;
+
+}
+nav a {
+  color: #000000;
+  text-decoration: none;
+  color: inherit;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+
 }
 
 /* ---------- Produtos ---------- */
@@ -36,8 +55,8 @@ header {
   align-items: center;
   box-sizing: border-box;
   cursor: pointer;
-  transition: box-shadow 0.3s ease; /* Hover suave */
-  margin-bottom: 10px; /* Espaçamento extra */
+  transition: box-shadow 0.3s ease; 
+  margin-bottom: 10px;
 }
 
 .produto:hover {
@@ -88,7 +107,7 @@ footer {
   background: #000000;
   color: rgb(210, 210, 10);
   padding: 30px;
-  margin-top: auto; /* Para push footer down se necessário */
+  margin-top: auto; 
 }
 
 /* ---------- Modal ---------- */
@@ -133,14 +152,14 @@ footer {
   border-radius: 6px;
 }
 
-#descricaoModal { /* Mudado para ID específico */
+#descricaoModal { 
   flex: 1;
   background: white;
   padding: 10px;
   color: black;
   font-size: 16px;
   line-height: 1.4;
-  margin: 0; /* Limpeza */
+  margin: 0; 
 }
 
 .modal-close {
@@ -165,8 +184,6 @@ footer {
   border-radius: 50%;
 }
 
-}
-
 .modal-close:hover {
   background: rgba(0,0,0,0.1);
   border-radius: 50%;
@@ -184,7 +201,7 @@ footer {
   padding: 20px;
   transition: right 0.3s ease;
   z-index: 1000;
-  overflow-y: auto; /* Scroll se muitos itens */
+  overflow-y: auto; 
 }
 
 .carrinho-sidebar.ativo {
