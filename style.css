@@ -165,6 +165,13 @@ footer {
   border-radius: 50%;
 }
 
+}
+
+.modal-close:hover {
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+}
+
 /* ---------- Carrinho ---------- */
 .carrinho-sidebar {
   position: fixed;
@@ -250,6 +257,23 @@ footer {
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
+}
+
+/* Responsivo extra para mobile */
+@media (max-width: 600px) {
+  .carrinho-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .modal-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .modal-inner img {
+    max-width: 100%;
+  }
 }
 
 /* Responsivo extra para mobile */

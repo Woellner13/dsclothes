@@ -73,6 +73,7 @@ function finalizarCompra() {
   document.getElementById("telaFinalizacao").style.display = "block";
   document.getElementById("carrinhoSidebar").classList.remove("ativo");
   window.open(link, '_blank');
+
   // Limpar carrinho após "compra"
   esvaziarCarrinho();
 }
