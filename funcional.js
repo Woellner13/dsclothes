@@ -64,13 +64,16 @@ function toggleCarrinho() {
 
 function finalizarCompra() {
   if (carrinho.length === 0) {
-    alert("Carrinho vazio!");
+    alert("O carrinho vazio! Você não pode finalizar a compra!");
     return;
   }
   const total = carrinho.reduce((sum, item) => sum + item.preco, 0);
+  const link ="https://github.com/Woellner13/dsclothes"
   document.getElementById("totalFinal").textContent = total.toFixed(2);
   document.getElementById("telaFinalizacao").style.display = "block";
   document.getElementById("carrinhoSidebar").classList.remove("ativo");
+  window.open(link, '_blank');
+
   // Limpar carrinho após "compra"
   esvaziarCarrinho();
 }
