@@ -97,7 +97,7 @@ function finalizarCompra() {
     return;
   }
   const total = carrinho.reduce((sum, item) => sum + (item.preco * item.quantidade), 0);
-  const link = "https://github.com/Woellner13/dsclothes";
+  const link = "https://forms.gle/Sf2AGrMvqVE3Sx2L9";
   document.getElementById("totalFinal").textContent = total.toFixed(2);
   document.getElementById("telaFinalizacao").style.display = "block";
   document.getElementById("carrinhoSidebar").classList.remove("ativo");

@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-image: url('Imagens/fundo.png');
+    background-color: #000;
     background-repeat: repeat;
     background-size: 50px 50px; 
     background-position: left top;
@@ -111,7 +111,7 @@ a:hover {
 
 /* ---------- Footer ---------- */
 footer {
-  background-image: url('Imagens/fundo.png');
+  background-color: #000;
   background-repeat: repeat;
   background-size: 50px 50px;
   background-position: left top;
