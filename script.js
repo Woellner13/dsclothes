@@ -125,3 +125,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // Opcional: Filtrar para "todos" por padrão
   filtrarProdutos('todos');
 });
+
+/* ATUALIZAÇÃO */
