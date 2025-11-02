@@ -171,7 +171,7 @@ footer a {
 }
 
 .modal-inner {
-  background: #fff;
+  background: #ffffff;
   display: flex;
   padding: 20px;
   border-radius: 8px;
@@ -315,7 +315,7 @@ footer a {
   font-size: 16px;
 }
 
-/* Responsivo para mobile (removida duplicata) */
+/* Responsivo para mobile */
 @media (max-width: 600px) {
   .carrinho-sidebar {
     width: 100%;
@@ -331,7 +331,7 @@ footer a {
     max-width: 100%;
   }
 
-  header, footer {  /* Adicionado: altura flexível em mobile */
+  header, footer {  /*altura flexível em mobile */
     height: auto;
     min-height: 80px;
     padding: 10px 0;
