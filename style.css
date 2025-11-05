@@ -337,9 +337,3 @@ footer a {
     padding: 10px 0;
   }
 }
-
-header, footer {  /*altura flexível em mobile */
-  height: auto;
-  min-height: 80px;
-  padding: 10px 0;
-}
