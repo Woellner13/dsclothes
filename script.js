@@ -126,4 +126,4 @@ document.addEventListener('DOMContentLoaded', function() {
   filtrarProdutos('todos');
 });
 
-/* ATUALIZAÇÃO 1 */
+/* ATUALIZAÇÃO */
